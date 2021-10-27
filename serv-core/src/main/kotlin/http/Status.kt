@@ -56,4 +56,8 @@ enum class Status(val code: Int) {
     INSUFFICIENT_STORAGE(507),
     NOT_EXTENDED(510),
     NETWORK_AUTHENTICATION_REQUIRED(511);
+
+    companion object {
+        fun fromCode(code: Int): Status? = values().firstOrNull { it.code == code }
+    }
 }
